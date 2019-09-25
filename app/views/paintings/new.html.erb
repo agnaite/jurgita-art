@@ -1,0 +1,39 @@
+<h1>New Painting</h1>
+
+<%= form_with scope: :painting, url: paintings_path, local: true do |form| %>
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </p>
+
+  <p>
+    <%= form.label :size %><br>
+    <%= form.text_field :size %>
+  </p>
+
+  <p>
+    <%= form.label :medium %><br>
+    <%= form.text_field :medium %>
+  </p>
+
+  <p>
+    <%= form.label :price %><br>
+    <%= form.text_field :price %>
+  </p>
+
+  <p>
+    <%= form.label :new %><br>
+    <%= form.radio_button :new, "true" %><br>
+    <%= form.label :sold %><br>
+    <%= form.radio_button :sold, "true" %>
+  </p>
+
+  <p>
+    <%= form.label :image %><br>
+    <%= form.file_field :image %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

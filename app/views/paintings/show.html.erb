@@ -1,0 +1,30 @@
+<p>
+  <strong>Title:</strong>
+  <%= @painting.title %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @painting.size %>
+</p>
+
+<p>
+  <strong>Medium:</strong>
+  <%= @painting.medium %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @painting.price %>
+</p>
+
+<p>
+  <strong>Labels:</strong>
+  <%= @painting.new %>
+  <%= @painting.sold %>
+</p>
+
+<p>
+  <%= image_tag @painting.image if @painting.image.attached? %>
+</p>
+
