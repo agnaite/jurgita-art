@@ -1,0 +1,15 @@
+<h1>Categories</h1>
+
+<table>
+  <tr>
+    <th>Category</th>
+    <th></th>
+  </tr>
+
+  <% @categories.each do |category| %>
+    <tr>
+      <td><%= category.name %></td>
+      <td><%= link_to 'Show', category_path(category) %></td>
+    </tr>
+  <% end %>
+</table>

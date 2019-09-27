@@ -1,8 +1,15 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :categories, only: [:index, :show] do
+    get 'welcome/index'
+    resources :paintings, only: [:show]
+  end
 
-  resources :paintings
+  namespace :admin do
+    root 'admin#index'
+    resources :categories do
+      resources :paintings
+    end
+  end
 
   root 'welcome#index'
 end

@@ -1,0 +1,33 @@
+<p>
+<strong>Category</strong>
+<%= @category.name %>
+</p>
+
+<p>
+There are <%= @category.paintings.count %> paintings in this category.
+</p>
+
+
+  <div class="media portfolio">
+
+    <% @category.paintings.each do |painting| %>
+
+      <div class="media-left">
+        <% if painting.image.attached? %>
+          <%= link_to painting.image do %>
+            <%= image_tag painting.image, class: "media-object" %>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading">
+          <%= painting.title %>
+        </h4>
+        <%= painting.size %><br>
+        <%= painting.medium %><br>
+        <%= painting.price %>
+      </div><br>
+
+    <% end %>
+
+  </div>
