@@ -1,0 +1,17 @@
+<h1>Categories</h1>
+
+<table>
+  <tr>
+    <th>Category</th>
+    <th></th>
+  </tr>
+
+  <% @categories.each do |category| %>
+    <tr>
+      <td><%= category.name %></td>
+      <td><%= link_to 'Show', admin_category_path(category) %></td>
+      <td><%= link_to 'New Painting', new_admin_category_painting_path(category) %></td>
+      <td><%= link_to 'Edit', admin_category_path(category) %></td>
+    </tr>
+  <% end %>
+</table>

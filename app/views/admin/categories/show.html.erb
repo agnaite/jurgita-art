@@ -1,0 +1,16 @@
+<h1><%= @category.name %></h1>
+
+<table>
+  <tr>
+    <th>Paintings</th>
+    <th></th>
+  </tr>
+
+  <% @category.paintings.each do |painting| %>
+    <tr>
+      <td><%= painting.title %></td>
+      <td><%= link_to 'Edit', edit_admin_category_painting_path(@category) %></td>
+      <td><%= link_to 'Delete', admin_category_painting_path(@category, painting), method: 'delete' %></td>
+    </tr>
+  <% end %>
+</table>

@@ -8,9 +8,10 @@ There are <%= @category.paintings.count %> paintings in this category.
 </p>
 
 
-  <div class="media portfolio">
+<div class="media portfolio d-flex flex-column justify-content-start">
+  <% @category.paintings.each do |painting| %>
 
-    <% @category.paintings.each do |painting| %>
+    <div class="d-flex flex-row mb-auto p-4">
 
       <div class="media-left">
         <% if painting.image.attached? %>
@@ -19,6 +20,7 @@ There are <%= @category.paintings.count %> paintings in this category.
           <% end %>
         <% end %>
       </div>
+
       <div class="media-body">
         <h4 class="media-heading">
           <%= painting.title %>
@@ -26,8 +28,9 @@ There are <%= @category.paintings.count %> paintings in this category.
         <%= painting.size %><br>
         <%= painting.medium %><br>
         <%= painting.price %>
-      </div><br>
+      </div>
 
-    <% end %>
+    </div>
 
-  </div>
+  <% end %>
+</div>
