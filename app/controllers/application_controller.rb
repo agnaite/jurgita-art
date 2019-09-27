@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
 
   def require_admin
     authenticate_or_request_with_http_basic do |username, pass|
-      if username == ENV['user'] && pass == ENV['pass']
+      if username == ENV['USER'] && pass == ENV['PASS']
         session['admin'] = true
         true
       else
