@@ -9,7 +9,7 @@
   <% @category.paintings.each do |painting| %>
     <tr>
       <td><%= painting.title %></td>
-      <td><%= link_to 'Edit', edit_admin_category_painting_path(@category) %></td>
+      <td><%= link_to 'Edit', edit_admin_category_painting_path(@category, painting) %></td>
       <td><%= link_to 'Delete', admin_category_painting_path(@category, painting), method: 'delete' %></td>
     </tr>
   <% end %>

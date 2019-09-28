@@ -1,6 +1,7 @@
 class Admin::PaintingsController < AdminController
   def new
     @painting = Painting.new
+    @category = Category.find(params[:category_id])
   end
 
   def show
