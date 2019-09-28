@@ -1,4 +1,4 @@
-<%= form_with model: [:category, @painting], url: admin_category_paintings_path, local: true do |form| %>
+<%= form_with model: [:category, @painting], url: admin_category_paintings_path, local: true, class: "col-md-5" do |form| %>
 
   <% if @painting.errors.any? %>
     <div id="error_explanation">
@@ -15,40 +15,51 @@
     </div>
   <% end %>
 
-  <p>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
-  </p>
+    <h3>
+      <span class="p-2 badge badge-secondary badge-light">
+        <%= action %> Painting
+      </span>
+    </h3>
 
-  <p>
-    <%= form.label :size %><br>
-    <%= form.text_field :size %>
-  </p>
+    <div class="form-group p-2">
+      <%= form.label :title %>
+      <%= form.text_field :title, class: "form-control" %>
+    </div>
 
-  <p>
-    <%= form.label :medium %><br>
-    <%= form.text_field :medium %>
-  </p>
+    <div class="form-group p-2">
+      <%= form.label :size %>
+      <%= form.text_field :size, class: "form-control" %>
+    </div>
 
-  <p>
-    <%= form.label :price %><br>
-    <%= form.text_field :price %>
-  </p>
+    <div class="form-group p-2">
+      <%= form.label :medium %>
+      <%= form.text_field :medium, class: "form-control" %>
+    </div>
 
-  <p>
-    <%= form.label :new %><br>
-    <%= form.radio_button :new, "true" %><br>
-    <%= form.label :sold %><br>
-    <%= form.radio_button :sold, "true" %>
-  </p>
+    <div class="form-group p-2">
+      <%= form.label :price %>
+      <%= form.text_field :price, class: "form-control" %>
+    </div>
 
-  <p>
-    <%= form.label :image %><br>
-    <%= form.file_field :image %>
-  </p>
+    <div class="form-group p-2">
+      <div class="form-check">
+        <%= form.radio_button :new, "true", id: "new", class: "form-check-input", name: "labels" %>
+        <%= form.label :new, class: "form-check-label" %>
+      </div>
 
-  <p>
-    <%= form.submit %>
-  </p>
+      <div class="form-check">
+        <%= form.radio_button :sold, "true", id: "sold", class: "form-check-input", name: "labels" %>
+        <%= form.label :sold, class: "form-check-label" %>
+      </div>
+    </div>
+
+    <div class="custom-file p-2">
+      <%= form.file_field :image, class: "custom-file-input" %>
+      <%= form.label :image, class: "custom-file-label" %>
+    </div>
+
+    <div class="form-group py-4">
+      <%= form.submit "Submit", class: "btn btn-primary" %>
+    </div>
 
 <% end %>
