@@ -11,6 +11,7 @@ class Admin::PaintingsController < AdminController
 
   def edit
     @painting = Painting.find(params[:id])
+    @category = Category.find(params[:category_id])
   end
 
   def create
