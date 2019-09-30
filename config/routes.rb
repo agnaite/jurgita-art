@@ -1,14 +1,12 @@
 Rails.application.routes.draw do
-  resources :categories, only: [:index, :show] do
+  resources :categories, only: [:show] do
     get 'welcome/index'
-    resources :paintings, only: [:show]
   end
 
   namespace :admin do
-    root 'admin#index'
     get :logout
-    resources :categories do
-      resources :paintings
+    resources :categories, except: [:update, :edit, :destroy] do
+      resources :paintings, except: [:show, :index]
     end
   end
 
