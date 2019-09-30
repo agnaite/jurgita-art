@@ -4,11 +4,6 @@ class Admin::PaintingsController < AdminController
     @category = Category.find(params[:category_id])
   end
 
-  def show
-    @painting = Painting.find(params[:id])
-    @category = Category.find(params[:category_id])
-  end
-
   def edit
     @painting = Painting.find(params[:id])
     @category = Category.find(params[:category_id])
