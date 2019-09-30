@@ -21,7 +21,7 @@ class Admin::PaintingsController < AdminController
     @painting.category = @category
 
     if @painting.save
-      redirect_to admin_category_painting_path(@category, @painting)
+      redirect_to admin_category_path(@category)
     else
       render 'new'
     end
@@ -33,7 +33,7 @@ class Admin::PaintingsController < AdminController
 
 
     if @painting.update(painting_params)
-      redirect_to admin_category_painting_path(@category, @painting)
+      redirect_to admin_category_path(@category)
     else
       render 'edit'
     end
@@ -48,7 +48,6 @@ class Admin::PaintingsController < AdminController
     end
 
     @painting.destroy
-
     redirect_to admin_category_path(@category)
   end
 

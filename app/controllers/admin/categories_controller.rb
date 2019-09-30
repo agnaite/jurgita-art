@@ -15,7 +15,7 @@ class Admin::CategoriesController < AdminController
     @category = Category.new(category_params)
 
     if @category.save
-      redirect_to @category
+      redirect_to admin_category_path(@category)
     else
       render 'new'
     end

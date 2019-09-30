@@ -27,7 +27,7 @@ There are <%= @category.paintings.count %> paintings in this category.
         </h4>
         <%= painting.size %><br>
         <%= painting.medium %><br>
-        <%= painting.price %>
+        $<%= painting.price.tr('$', '') %>
       </div>
 
     </div>
