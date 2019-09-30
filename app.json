@@ -1,0 +1,39 @@
+{
+  "name": "jurgita-art",
+  "env": {
+    "PASS": {
+      "required": true
+    },
+
+    "USER": {
+      "required": true
+    },
+
+    "LANG": {
+      "required": true
+    },
+
+    "SECRET_KEY_BASE": {
+      "required": true
+    },
+    "RAILS_ENV": "development",
+    "RACK_ENV": "development"
+  },
+
+  "scripts":{
+    "postdeploy": "bundle exec rake db:schema:load db:seed"
+  },
+
+  "addons": [
+    "heroku-postgresql"
+  ],
+
+  "buildpacks": [
+    {
+      "url": "heroku/ruby"
+    },
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-activestorage-preview"
+    }
+  ]
+}

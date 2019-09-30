@@ -1,27 +1,35 @@
-<%= form_with model: [:admin, @category], url: admin_categories_path, local: true do |form| %>
-
+<div class="row justify-content-md-center">
   <% if @category.errors.any? %>
-    <div id="error_explanation">
-      <h2>
+    <div class="alert alert-light col-md-6" role="alert" id="error_explanation">
+      <h6>
         <%= pluralize(@category.errors.count, "error") %>
-  prohibited
-        this category from being saved:
-      </h2>
-      <ul>
+        prohibited this category from being saved:
+      </h6>
+      <ul class="list-group">
         <% @category.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
+          <li class="list-group-item list-group-item-danger">
+            <%= msg %>
+          </li>
         <% end %>
       </ul>
     </div>
   <% end %>
+</div>
 
-  <p>
-    <%= form.label :name %><br>
-    <%= form.text_field :name %>
-  </p>
+<div class="row justify-content-md-center py-4">
+  <%= form_with model: [:admin, @category], url: admin_categories_path, local: true, class: "form" do |form| %>
+    <h3>
+      <span class="py-4  badge badge-secondary badge-light">
+        New category
+      </span>
+    </h3>
 
-  <p>
-    <%= form.submit %>
-  </p>
+    <div class="form-group">
+      <%= form.text_field :name, class: "form-control", placeholder: "cats" %>
+    </div>
 
-<% end %>
+    <div class="form-group">
+      <%= form.submit "Submit", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
