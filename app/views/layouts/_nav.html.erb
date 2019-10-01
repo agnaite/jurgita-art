@@ -20,7 +20,9 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <% @nav_categories.each do |cat| %>
-            <%= link_to cat.name, category_path(cat), class: "dropdown-item" %>
+            <% if cat.paintings.count > 0 %>
+              <%= link_to cat.name, category_path(cat), class: "dropdown-item" %>
+            <% end %>
           <% end %>
         </div>
       </li>
