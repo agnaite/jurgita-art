@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   resources :categories, only: [:show] do
-    get 'welcome/index'
   end
 
   namespace :admin do
