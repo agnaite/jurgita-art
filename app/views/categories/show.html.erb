@@ -1,15 +1,21 @@
-<p>
-<strong>Category</strong>
-<%= @category.name %>
-</p>
+<div class="row px-5 py-1">
+  <h4><span class="badge badge-warning"><%= @category.name %></span></h4>
+</div>
 
-<p>
-There are <%= @category.paintings.count %> paintings in this category.
-</p>
+<div class="row px-5 py-1">
+  <span class="badge badge-primary">
+    <% if @reverse == false %>
+      <%= link_to 'sort: new to old', category_path(@category, reverse: 't'), class: "text-reset text-decoration-none" %>
+    <% end %>
 
+    <% if @reverse == true %>
+      <%= link_to 'sort: old to new', category_path(@category, reverse: 'f'), class: "text-reset text-decoration-none" %>
+    <% end %>
+  </span>
+</div>
 
 <div class="media portfolio d-flex flex-column justify-content-start">
-  <% @category.paintings.each do |painting| %>
+  <% @paintings.each do |painting| %>
 
     <div class="d-flex flex-row mb-auto p-4">
 
