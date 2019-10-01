@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
+    root 'admin#index'
     get :logout
     resources :categories, except: [:update, :edit, :destroy] do
       resources :paintings, except: [:show, :index]
