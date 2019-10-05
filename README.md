@@ -15,3 +15,6 @@ Once you cloned the repo you should follow the next steps to be able to run it:
 4. Run `rails db:create`
 5. Run `rails db:migrate`
 6. Run `rails s`
+
+##Before pushing your changes
+1. Run `rubocop -a` to look for offenses and solve them.
