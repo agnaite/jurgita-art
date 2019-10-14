@@ -24,15 +24,11 @@
           <%= link_to painting.image do %>
 
             <% if painting.new? %>
-              <div class="ribbon-container">
-                <span id="ribbon-new">NEW</span>
-              </div>
-            <% end %>
+              <%= render 'categories/label', name: "new" %>
+           <% end %>
 
             <% if painting.sold? %>
-              <div class="ribbon-container">
-                <span id="ribbon-sold">SOLD</span>
-              </div>
+              <%= render 'categories/label', name: "sold" %>
             <% end %>
 
             <%= image_tag painting.image, class: "media-object" %>
