@@ -22,6 +22,15 @@
       <div class="media-left">
         <% if painting.image.attached? %>
           <%= link_to painting.image do %>
+
+            <% if painting.new? %>
+              <%= render 'categories/label', name: "new" %>
+           <% end %>
+
+            <% if painting.sold? %>
+              <%= render 'categories/label', name: "sold" %>
+            <% end %>
+
             <%= image_tag painting.image, class: "media-object" %>
           <% end %>
         <% end %>
