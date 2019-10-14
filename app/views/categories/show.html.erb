@@ -22,6 +22,19 @@
       <div class="media-left">
         <% if painting.image.attached? %>
           <%= link_to painting.image do %>
+
+            <% if painting.new? %>
+              <div class="ribbon-container">
+                <span id="ribbon-new">NEW</span>
+              </div>
+            <% end %>
+
+            <% if painting.sold? %>
+              <div class="ribbon-container">
+                <span id="ribbon-sold">SOLD</span>
+              </div>
+            <% end %>
+
             <%= image_tag painting.image, class: "media-object" %>
           <% end %>
         <% end %>

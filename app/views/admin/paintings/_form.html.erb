@@ -27,12 +27,12 @@
 
     <div class="form-group p-2">
       <div class="form-check">
-        <%= form.radio_button :new, "true", id: "new", class: "form-check-input", name: "labels" %>
+        <%= form.radio_button :new, value: "true", id: "new", class: "form-check-input", name: "labels" %>
         <%= form.label :new, class: "form-check-label" %>
       </div>
 
       <div class="form-check">
-        <%= form.radio_button :sold, "true", id: "sold", class: "form-check-input", name: "labels" %>
+        <%= form.radio_button :sold, value: "true", id: "sold", class: "form-check-input", name: "labels" %>
         <%= form.label :sold, class: "form-check-label" %>
       </div>
     </div>
