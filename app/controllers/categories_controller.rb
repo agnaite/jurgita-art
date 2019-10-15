@@ -8,11 +8,11 @@ class CategoriesController < ApplicationController
 
     @category = Category.find(params[:id])
 
-    if params[:reverse] == 't'
-      @reverse = true
+    if params[:reverse] == 'f'
+      @reverse = false
       @paintings = @category.paintings
     else
-      @reverse = false
+      @reverse = true
       @paintings = @category.paintings.reverse
     end
   end
