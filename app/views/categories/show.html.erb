@@ -1,5 +1,5 @@
 <div class="row px-5 py-1">
-  <h4><span class="badge badge-warning"><%= @category.name %></span></h4>
+  <h4><span class="badge badge-warning"><%= @category.name.capitalize %></span></h4>
 </div>
 
 <div class="row px-5 py-1">
@@ -38,10 +38,10 @@
 
       <div class="media-body">
         <h4 class="media-heading">
-          <%= painting.title %>
+          <%= painting.title.capitalize %>
         </h4>
         <%= painting.width %> x <%= painting.height %><br>
-        <%= painting.medium %><br>
+        <%= painting.medium.capitalize %><br>
         $<%= painting.price.tr('$', '') %>
       </div>
 
