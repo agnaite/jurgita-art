@@ -37,12 +37,18 @@
       </div>
 
       <div class="media-body">
+
         <h4 class="media-heading">
           <%= painting.title.capitalize %>
         </h4>
-        <%= painting.width %> x <%= painting.height %><br>
+
+        <% if painting.width? && painting.height? %>
+          <%= painting.width %> x <%= painting.height %><br>
+        <% end %>
+
         <%= painting.medium.capitalize %><br>
         $<%= painting.price.tr('$', '') %>
+
       </div>
 
     </div>
