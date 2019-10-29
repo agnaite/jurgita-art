@@ -31,18 +31,15 @@ $monsterbear: 1300px;
 
 }
 
-body{
+body {
 	margin: 0;
 	background-color: $bgr-color;
 	padding-bottom: 40px;
-}
 
-	.navbar-default .navbar-nav > .active > a,
-	.navbar-default .navbar-nav > .active > a:hover,
-	.navbar-default .navbar-nav > .active > a:focus {
-			background-color: $bgr-color;
-			color: $super-light-gray;
+	.navbar-light .navbar-nav .nav-link.active {
+    color: $light-gray;
 	}
+}
 
 .navbar .navbar-brand {
 	color: $light-gray;
