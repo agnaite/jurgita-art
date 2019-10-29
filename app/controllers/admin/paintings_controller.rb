@@ -48,6 +48,6 @@ class Admin::PaintingsController < AdminController
 
   private
     def painting_params
-      params.require(:painting).permit(:title, :size, :medium, :price, :new, :sold, :image, :category_id)
+      params.require(:painting).permit(:title, :width, :height, :medium, :price, :new, :sold, :image, :category_id)
     end
 end
