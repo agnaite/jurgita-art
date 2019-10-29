@@ -5,8 +5,8 @@
   </button>
   <div class="collapse justify-content-end navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav text-right text-lg-left">
-      <li class="nav-item active">
-        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      <li class="nav-item">
+        <a class="nav-link <%= 'font-weight-bold active' if current_page?(root_path) %>" href="/">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">About</a>
@@ -15,7 +15,7 @@
         <a class="nav-link" href="#">Exhibitions</a>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle <%= 'font-weight-bold active' if params[:controller] == 'categories' %>" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Portfolio
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -29,7 +29,7 @@
 
       <% if admin? %>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle text-danger" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle text-danger <%= 'font-weight-bold' if params[:controller] == 'admin/categories' %>" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Admin
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
