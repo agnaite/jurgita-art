@@ -3,12 +3,13 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    root 'admin#index'
+    root "admin#index"
     get :logout
     resources :categories, except: [:update, :edit, :destroy] do
       resources :paintings, except: [:show, :index]
     end
   end
 
-  root 'welcome#index'
+  root "welcome#index"
+  get "welcome/index"
 end
