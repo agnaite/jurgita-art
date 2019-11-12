@@ -1,0 +1,11 @@
+<%= form_with model: [:admin, @exhibition_image], local: true, class: "col-md-5" do |form| %>
+ <div class="custom-file p-2">
+    <%= form.file_field :image, class: "custom-file-input" %>
+    <%= form.label :image, class: "custom-file-label" %>
+  </div>
+
+  <div class="form-group py-4">
+    <%= form.submit "Submit", class: "btn btn-primary" %>
+  </div>
+
+<% end %>
