@@ -9,10 +9,10 @@
         <a class="nav-link <%= 'font-weight-bold active' if current_page?(root_path) %>" href="/">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">About</a>
+        <a class="nav-link <%= 'font-weight-bold active' if current_page?(about_index_path) %>" href="<%= about_index_path %>" >About</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Exhibitions</a>
+        <a class="nav-link <%= 'font-weight-bold active' if current_page?(exhibitions_path) %>" href="<%= exhibitions_path %>" >Exhibitions</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle <%= 'font-weight-bold active' if params[:controller] == 'categories' %>" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

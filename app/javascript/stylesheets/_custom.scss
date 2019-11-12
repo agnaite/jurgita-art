@@ -220,16 +220,16 @@ body {
 	}
 }
 
-	#about-text {
-		text-align: justify;
+#about-text {
+	text-align: justify;
+}
+
+.img-wrap {
+	margin-top: 60px;
+
+	@media screen and (max-width: 520px) {
+		margin-top: 20px;
 	}
-
-	.img-wrap {
-		margin-top: 60px;
-
-		@media screen and (max-width: 520px) {
-			margin-top: 20px;
-		}
 
 	#about-pic {
 		width: 110%;
@@ -247,7 +247,7 @@ body {
 }
 
 #buy-text,
-#about-text {
+.about-text {
 	font-size: 18px;
 	display: block;
 	margin: 0 auto;
