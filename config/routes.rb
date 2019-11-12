@@ -15,6 +15,7 @@ Rails.application.routes.draw do
       resources :paintings, except: [:show, :index]
     end
     resources :exhibitions, except: [:show, :index]
+    resources :exhibition_images, only: [:new, :create]
   end
 
   root "welcome#index"
