@@ -24,14 +24,14 @@
     <div class="container">
       <h1 class="display-4">Gallery Exhibitions</h1>
       <% @exhibitions.each do |exhibition| %>
-        <div class="row lead">
-          <div class="col-sm-2">
+        <div class="row justify-content-start align-items-center lead">
+          <div class="col-3 col-xl-1">
             <%= exhibition.start.strftime("%m/%Y") %>
           </div>
-          <div class="col-sm-4 font-italic">
+          <div class="col font-italic">
             <%= exhibition.name.titleize %>
           </div>
-          <div class="col-cm-2">
+          <div class="col">
             <%= exhibition.location %>
           </div>
         </div>

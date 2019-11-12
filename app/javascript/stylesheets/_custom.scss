@@ -184,18 +184,22 @@ body {
 
 .exhibits {
 	margin-top: 30px;
-	width: 100%;
-	p {
+
+	div {
 		font-size: 20px;
 	}
 
-	@media screen and (max-width: 520px) {
+	@media screen and (max-width: 576px) {
 		padding: 3px 0;
 		margin-top: 40px;
 
-		p {
-			font-size: 16px;
+		div {
+			font-size: 14px;
 		}
+
+    h1 {
+      font-size: 36px;
+    }
 	}
 }
 
