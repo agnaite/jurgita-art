@@ -1,8 +1,4 @@
 class Admin::ExhibitionsController < AdminController
-  def index
-    @exhibitions = Exhibition.all
-  end
-
   def new
     @exhibition = Exhibition.new
   end
@@ -11,7 +7,7 @@ class Admin::ExhibitionsController < AdminController
     @exhibition = Exhibition.new(exhibition_params)
 
     if @exhibition.save
-      redirect_to admin_exhibitions_path
+      redirect_to exhibitions_path
     else
       render 'new'
     end
@@ -20,6 +16,6 @@ class Admin::ExhibitionsController < AdminController
   private
 
   def exhibition_params
-    params.require(:exhibition).permit(:start, :end, :name, :location)
+    params.require(:exhibition).permit(:start, :name, :location)
   end
 end

@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     resources :categories, except: [:update, :edit, :destroy] do
       resources :paintings, except: [:show, :index]
     end
-    resources :exhibitions, except: [:show]
+    resources :exhibitions, except: [:show, :index]
   end
 
   root "welcome#index"
