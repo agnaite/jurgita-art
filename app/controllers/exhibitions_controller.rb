@@ -1,6 +1,8 @@
 class ExhibitionsController < ApplicationController
   def index
-    @exhibitions = Exhibition.all
-    @images = ExhibitionImage.all
+    @images = ExhibitionImage.all.reverse
+
+    exhibitions = Exhibition.all.sort_by &:start
+    @exhibitions = exhibitions.reverse
   end
 end
