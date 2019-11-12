@@ -14,10 +14,10 @@
   </span>
 </div>
 
-<div class="media portfolio d-flex flex-column justify-content-start">
+<div class="media portfolio justify-content-start d-flex flex-column">
   <% @paintings.reverse.each do |painting| %>
 
-    <div class="d-flex flex-row mb-auto p-4">
+    <div class="d-flex flex-sm-row flex-column p-4">
 
       <div class="media-left">
         <% if painting.image.attached? %>
@@ -37,7 +37,6 @@
       </div>
 
       <div class="media-body">
-
         <h4 class="media-heading">
           <%= painting.title.capitalize %>
         </h4>
@@ -48,7 +47,6 @@
 
         <%= painting.medium.capitalize %><br>
         $<%= painting.price.tr('$', '') %>
-
       </div>
 
     </div>
