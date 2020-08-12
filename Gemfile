@@ -8,7 +8,7 @@ gem 'rails', '~> 6.0.0'
 # db
 gem 'pg'
 # Use Puma as the app server
-gem 'puma', '~> 3.11'
+gem 'puma', '>= 3.12.6'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
@@ -25,6 +25,13 @@ gem "aws-sdk-s3"
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
+
+gem "activesupport", ">= 6.0.3.1"
+gem "rack", ">= 2.1.4"
+gem "nokogiri", ">= 1.10.8"
+gem "actionview", ">= 6.0.3.1"
+gem "actionpack", ">= 6.0.3.2"
+gem "websocket-extensions", ">= 0.1.5"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
