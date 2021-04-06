@@ -46,7 +46,10 @@
         <% end %>
 
         <%= painting.medium.capitalize %><br>
-        $<%= painting.price.tr('$', '') %>
+
+        <% unless painting.sold? %>
+          $<%= painting.price.tr('$', '') %>
+        <% end %>
       </div>
 
     </div>
