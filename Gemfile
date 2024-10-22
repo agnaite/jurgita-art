@@ -26,6 +26,9 @@ gem "aws-sdk-s3"
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+gem 'mutex_m'
+gem 'bigdecimal'
+
 gem "activesupport", ">= 6.0.3.1"
 gem "rack", ">= 2.1.4"
 gem "nokogiri", ">= 1.10.8"
